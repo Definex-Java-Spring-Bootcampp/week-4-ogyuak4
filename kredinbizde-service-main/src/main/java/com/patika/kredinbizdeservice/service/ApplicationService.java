@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -46,5 +48,9 @@ public class ApplicationService {
         applicationRequest.setUserId(1L);
 
         return applicationRequest;
+    }
+    @Transactional
+    public List<Application> getAll() {
+        return applicationRepository.findAll();
     }
 }
