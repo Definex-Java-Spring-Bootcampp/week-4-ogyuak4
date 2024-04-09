@@ -36,20 +36,20 @@ public class UserServiceTest {
     public void should_create_user_successfully() {
 
         //given
-        //Mockito.when(userRepository.save(prepareUser())).thenReturn(prepareUser()); //neden hata veriyor?
+        //Mockito.when(userRepository.save(praperaUser())).thenReturn(praperaUser()); //neden hata veriyor?
 
-        Mockito.when(userRepository.save(Mockito.any(User.class))).thenReturn(prepareUser()); //neden hata vermiyor
-        System.out.println(prepareUser().hashCode());
+        Mockito.when(userRepository.save(Mockito.any(User.class))).thenReturn(preparaUser()); //neden hata vermiyor
+        System.out.println(preparaUser().hashCode());
         //when
-        User userResponse = userService.save(prepareUser());
+        User userResponse = userService.save(preparaUser());
 
         //then --assertion -- doğrulama
 
         assertThat(userResponse).isNotNull();
         assertThat(userResponse.getName()).isEqualTo("test name");
-        assertThat(userResponse.getSurname()).isEqualTo(prepareUser().getSurname());
-        assertThat(userResponse.getEmail()).isEqualTo(prepareUser().getEmail());
-        assertThat(userResponse.getPassword()).isEqualTo(prepareUser().getPassword());
+        assertThat(userResponse.getSurname()).isEqualTo(preparaUser().getSurname());
+        assertThat(userResponse.getEmail()).isEqualTo(preparaUser().getEmail());
+        assertThat(userResponse.getPassword()).isEqualTo(preparaUser().getPassword());
         assertThat(userResponse.getIsActive()).isTrue();
 
         verify(userRepository, times(1)).save(Mockito.any(User.class));
@@ -60,7 +60,7 @@ public class UserServiceTest {
     public void should_return_user_by_email_successfully() {
 
         //given
-        Mockito.when(userRepository.findByEmail(prepareUser().getEmail())).thenReturn(Optional.of(prepareUser()));
+        Mockito.when(userRepository.findByEmail(preparaUser().getEmail())).thenReturn(Optional.of(preparaUser()));
 
         //when
         User userResponse = userService.getByEmail("test@gmail.com");
@@ -68,9 +68,9 @@ public class UserServiceTest {
         //then
         assertThat(userResponse).isNotNull();
         assertThat(userResponse.getName()).isEqualTo("test name");
-        assertThat(userResponse.getSurname()).isEqualTo(prepareUser().getSurname());
-        assertThat(userResponse.getEmail()).isEqualTo(prepareUser().getEmail());
-        assertThat(userResponse.getPassword()).isEqualTo(prepareUser().getPassword());
+        assertThat(userResponse.getSurname()).isEqualTo(preparaUser().getSurname());
+        assertThat(userResponse.getEmail()).isEqualTo(preparaUser().getEmail());
+        assertThat(userResponse.getPassword()).isEqualTo(preparaUser().getPassword());
         assertThat(userResponse.getIsActive()).isTrue();
 
         verify(userRepository, times(1)).findByEmail("test@gmail.com");
@@ -98,7 +98,7 @@ public class UserServiceTest {
 
     }
 
-    private User prepareUser() {
+    private User preparaUser() {
         User user = new User();
 
         user.setName("test name");

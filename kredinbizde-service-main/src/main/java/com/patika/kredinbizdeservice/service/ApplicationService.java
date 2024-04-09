@@ -11,6 +11,7 @@ import com.patika.kredinbizdeservice.repository.ApplicationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +23,7 @@ public class ApplicationService {
     private final UserService userService;
     private final AkbankServiceClient akbankServiceClient;
 
+    @Transactional
     public Application createApplication(ApplicationRequest request) {
 
         User user = userService.getByEmail(request.getEmail());
