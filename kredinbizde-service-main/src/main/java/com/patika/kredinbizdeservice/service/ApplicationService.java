@@ -37,7 +37,7 @@ public class ApplicationService {
 
         ApplicationResponse akbankApplicationResponse = akbankServiceClient.createApplication(prepareAkbankApplicationRequest(user));
 
-        // TODO akbankApplicationResponse response kontrol edilmeli.
+
 
         return savedApplication;
     }

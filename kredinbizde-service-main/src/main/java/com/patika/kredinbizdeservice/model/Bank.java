@@ -1,7 +1,10 @@
 package com.patika.kredinbizdeservice.model;
 
+import lombok.ToString;
+
 import java.util.List;
 
+@ToString
 public class Bank {
 
     private String name;
@@ -24,11 +27,4 @@ public class Bank {
         this.loanList = loanList;
     }
 
-    @Override
-    public String toString() {
-        return "Bank{" +
-                "name='" + name + '\'' +
-                ", loanList=" + loanList +
-                '}';
-    }
 }

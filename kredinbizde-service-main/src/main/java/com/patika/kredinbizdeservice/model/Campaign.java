@@ -1,9 +1,11 @@
 package com.patika.kredinbizdeservice.model;
 
 import com.patika.kredinbizdeservice.enums.SectorType;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
+@ToString
 public class Campaign {
 
     private String title;
@@ -70,15 +72,4 @@ public class Campaign {
         this.sector = sector;
     }
 
-    @Override
-    public String toString() {
-        return "Campaign{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", dueDate=" + dueDate +
-                ", createDate=" + createDate +
-                ", updateDate=" + updateDate +
-                ", sector=" + sector +
-                '}';
-    }
 }

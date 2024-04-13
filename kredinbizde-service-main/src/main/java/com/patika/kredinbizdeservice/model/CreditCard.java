@@ -1,8 +1,11 @@
 package com.patika.kredinbizdeservice.model;
 
+import lombok.ToString;
+
 import java.math.BigDecimal;
 import java.util.List;
 
+@ToString
 public class CreditCard implements Product{
 
     private BigDecimal fee;
@@ -38,12 +41,4 @@ public class CreditCard implements Product{
         this.bank = bank;
     }
 
-    @Override
-    public String toString() {
-        return "CreditCard{" +
-                "fee=" + fee +
-                ", campaignList=" + campaignList +
-                ", bank=" + bank +
-                '}';
-    }
 }
