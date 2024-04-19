@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 @Slf4j
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler { //hataların log'lanması neden yok? :(
 
     @ExceptionHandler(KredinbizdeException.class)
     public ResponseEntity<ExceptionResponse> handleKredinbizdeException(KredinbizdeException exception) {
