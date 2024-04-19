@@ -11,7 +11,7 @@ import java.util.Map;
 @AllArgsConstructor
 @Component
 @Slf4j
-public class NotificationContext {
+public class NotificationContext {//ismi daha güzel olabilir. ayrıca böyle bir sınıfa gerek yok ama süper. istediğim buydu. bravı
     private final Map<NotificationType, NotificationStrategy> sendNotificationByType;
 
     public void sendMessage(NotificationDTO notification) {
